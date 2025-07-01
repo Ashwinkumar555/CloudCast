@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudCast - Weather App</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="weather-app-bg">
+    <div class="weather-app-container">
+      <!-- City Search -->
+      <div class="search-bar-outer">
+        <form class="city-search" id="citySearchForm">
+          <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="main-weather-card">
+        <!-- Current Weather Card -->
+        <section class="current-weather card">
+          <div class="current-main">
+            <img src="https://openweathermap.org/img/wn/01d@4x.png" alt="Weather Icon" class="weather-icon">
+            <div class="current-info">
+              <h1 class="temp">23°C</h1>
+              <p class="desc">Sunny</p>
+              <p class="location">San Francisco, CA</p>
+            </div>
+          </div>
+          <div class="current-details">
+            <div>Wind: <span>12 km/h</span></div>
+            <div>Rain: <span>10%</span></div>
+            <div>Humidity: <span>60%</span></div>
+          </div>
+        </section>
+        <!-- Temperature Graph -->
+        <section class="temp-graph card">
+          <canvas id="tempChart" height="80"></canvas>
+        </section>
+        <!-- Hourly Forecast -->
+        <section class="hourly-forecast card">
+          <h2>Hourly</h2>
+          <div class="hourly-scroll">
+            <div class="hourly-item">
+              <span class="hour">10 AM</span>
+              <img src="https://openweathermap.org/img/wn/01d.png" alt="Sunny">
+              <span class="hour-temp">22°C</span>
+            </div>
+            <div class="hourly-item">
+              <span class="hour">11 AM</span>
+              <img src="https://openweathermap.org/img/wn/02d.png" alt="Partly Cloudy">
+              <span class="hour-temp">23°C</span>
+            </div>
+            <div class="hourly-item">
+              <span class="hour">12 PM</span>
+              <img src="https://openweathermap.org/img/wn/03d.png" alt="Cloudy">
+              <span class="hour-temp">24°C</span>
+            </div>
+            <div class="hourly-item">
+              <span class="hour">1 PM</span>
+              <img src="https://openweathermap.org/img/wn/04d.png" alt="Overcast">
+              <span class="hour-temp">25°C</span>
+            </div>
+            <div class="hourly-item">
+              <span class="hour">2 PM</span>
+              <img src="https://openweathermap.org/img/wn/09d.png" alt="Rain">
+              <span class="hour-temp">24°C</span>
+            </div>
+            <div class="hourly-item">
+              <span class="hour">3 PM</span>
+              <img src="https://openweathermap.org/img/wn/10d.png" alt="Rain">
+              <span class="hour-temp">23°C</span>
+            </div>
+            <div class="hourly-item">
+              <span class="hour">4 PM</span>
+              <img src="https://openweathermap.org/img/wn/11d.png" alt="Thunderstorm">
+              <span class="hour-temp">22°C</span>
+            </div>
+          </div>
+        </section>
+        <!-- 7-Day Forecast -->
+        <section class="daily-forecast card">
+          <h2>7-Day Forecast</h2>
+          <div class="daily-list">
+            <div class="daily-item">
+              <span class="day">Mon</span>
+              <img src="https://openweathermap.org/img/wn/01d.png" alt="Sunny">
+              <span class="day-temp">25°C</span>
+            </div>
+            <div class="daily-item">
+              <span class="day">Tue</span>
+              <img src="https://openweathermap.org/img/wn/02d.png" alt="Partly Cloudy">
+              <span class="day-temp">24°C</span>
+            </div>
+            <div class="daily-item">
+              <span class="day">Wed</span>
+              <img src="https://openweathermap.org/img/wn/03d.png" alt="Cloudy">
+              <span class="day-temp">23°C</span>
+            </div>
+            <div class="daily-item">
+              <span class="day">Thu</span>
+              <img src="https://openweathermap.org/img/wn/04d.png" alt="Overcast">
+              <span class="day-temp">22°C</span>
+            </div>
+            <div class="daily-item">
+              <span class="day">Fri</span>
+              <img src="https://openweathermap.org/img/wn/09d.png" alt="Rain">
+              <span class="day-temp">21°C</span>
+            </div>
+            <div class="daily-item">
+              <span class="day">Sat</span>
+              <img src="https://openweathermap.org/img/wn/10d.png" alt="Rain">
+              <span class="day-temp">20°C</span>
+            </div>
+            <div class="daily-item">
+              <span class="day">Sun</span>
+              <img src="https://openweathermap.org/img/wn/11d.png" alt="Thunderstorm">
+              <span class="day-temp">19°C</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
