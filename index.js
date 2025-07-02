@@ -29,7 +29,7 @@ citySearchForm.addEventListener('submit', async (e) => {
 async function fetchWeather(city) {
   try {
     // Get coordinates
-    const geoRes = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(city)}&limit=1&appid=${API_KEY}`);
+    const geoRes = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(city)}&limit=1&appid=$(API_KEY)`);
     const geoData = await geoRes.json();
     if (!geoData[0]) {
       alert('City not found!');
@@ -38,7 +38,7 @@ async function fetchWeather(city) {
     const { lat, lon, name, country } = geoData[0];
 
     // Get weather data
-    const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=metric&appid=${API_KEY}`);
+    const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
     const weatherData = await weatherRes.json();
     updateCurrentWeather(weatherData.current, name, country);
     updateHourly(weatherData.hourly);
