@@ -22,6 +22,7 @@ let tempChart;
 citySearchForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const city = cityInput.value.trim();
+  console.log("City entered:",city);
   if (!city) return;
   fetchWeather(city);
 });
@@ -30,7 +31,10 @@ async function fetchWeather(city) {
   try {
     // Get coordinates
     const geoRes = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(city)}&limit=1&appid=$(API_KEY)`);
+    console.log("Fetching weather for:",city);
     const geoData = await geoRes.json();
+    console.log("GeoData from API:",geoData);
+   
     if (!geoData[0]) {
       alert('City not found!');
       return;
