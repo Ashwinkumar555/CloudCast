@@ -1,6 +1,6 @@
 // Weather App JS - CloudCast
 //your real API key 
-const API_KEY = '324e8d3b93a91cf1a86649c540a906cb';
+const API_KEY = '73ba25c1731c4bc8bd6145955250207';
 
 const citySearchForm = document.getElementById('citySearchForm');
 const cityInput = document.getElementById('cityInput');
