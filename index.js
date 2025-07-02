@@ -1,5 +1,5 @@
 // Weather App JS - CloudCast
-// Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
+//your real API key 
 const API_KEY = '324e8d3b93a91cf1a86649c540a906cb';
 
 const citySearchForm = document.getElementById('citySearchForm');
